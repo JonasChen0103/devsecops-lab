@@ -1,0 +1,7 @@
+rules:
+  - id: sql-fstring-injection
+    pattern: |
+      $VAR = f"...{...}..."
+    message: "偵測到使用 f-string 直接組合字串，這可能導致 SQL Injection 漏洞。請改用參數化查詢 (Parameterized Query)。"
+    languages: [python]
+    severity: ERROR
